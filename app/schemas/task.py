@@ -1,7 +1,13 @@
 from datetime import datetime
-from typing import List, Optional
+from typing import List, Optional, TYPE_CHECKING
 
 from pydantic import BaseModel
+
+if TYPE_CHECKING:
+    from .user import User
+    from .project import Project
+    from .priority import Priority
+    from .category import Category
 
 
 class TaskBase(BaseModel):
@@ -29,6 +35,3 @@ class Task(TaskBase):
 
     class Config:
         from_attributes = True
-
-    class Config:
-        orm_mode = True

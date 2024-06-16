@@ -1,13 +1,17 @@
+import sys
 from logging.config import fileConfig
 
 from alembic import context
-from sqlalchemy import engine_from_config
-from sqlalchemy import pool
+from sqlalchemy import engine_from_config, pool
+
+sys.path.insert(0, 'path/to/your/project')
 
 from app.database import Base
 
 config = context.config
+
 fileConfig(config.config_file_name)
+
 target_metadata = Base.metadata
 
 

@@ -1,7 +1,10 @@
 from datetime import datetime
-from typing import List
+from typing import List, TYPE_CHECKING
 
 from pydantic import BaseModel
+
+if TYPE_CHECKING:
+    from .task import Task
 
 
 class UserBase(BaseModel):
