@@ -6,7 +6,6 @@ DATABASE_URL = "postgresql://postgres:123@localhost:5432/timedb"
 
 engine = create_engine(DATABASE_URL)
 
-# Создание всех таблиц
 Base.metadata.create_all(engine)
 
 print("Все таблицы успешно созданы")
